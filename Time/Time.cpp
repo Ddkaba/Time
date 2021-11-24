@@ -6,31 +6,23 @@ using namespace std;
 /// <summary>
 /// Значения по умолчанию
 /// </summary>
-Time::Time() {
-    Hours = 0;
-    Minutes = 0;
-    Seconds = 0;
-}
+Time::Time() : Hours(0), Minutes(0), Seconds(0) { }
 /// <summary>
 /// Конструктор класса
 /// </summary>
 /// <param name="hour"></param>
 /// <param name="minute"></param>
 /// <param name="second"></param>
-Time::Time(int hour, int minute, int second) { 
-    Hours = hour;
-    Minutes = minute;
-    Seconds = second;
-}
+Time::Time(int hour, int minute, int second) : Hours(hour), Minutes(minute), Seconds(second) {}
 /// <summary>
 /// Перегрузка <=
 /// </summary>
 /// <param name="s"></param>
 /// <returns>Возврат bool переменной</returns>
-bool Time::operator<=(int s) 
+bool Time::operator<=(int s)
 {
     return Seconds <= s;
-} 
+}
 /// <summary>
 /// Перегрузка >=
 /// </summary>
@@ -186,17 +178,36 @@ int Time::SetHours(int hours) {
 /// </summary>
 /// <returns>Переведенно правильно время</returns>
 int Time::carryover() {
-    while (Minutes >= 60)
-    {
+    while (Hours >= 24) {
+        Hours -= 24;
+    }
+    while (Minutes >= 60) {
         Minutes -= 60;
         Hours++;
     }
-    while (Seconds >= 60)
-    {
+    while (Seconds >= 60) {
         Seconds -= 60;
         Minutes++;
     }
     return Seconds, Minutes, Hours;
+}
+/// <summary>
+/// Перевод времени в часы
+/// </summary>
+void Time::TranslateToHours() {
+    cout << double(Hours + (Minutes / 60.0) + ((Seconds / 60.0) / 60.0)) << endl;
+}
+/// <summary>
+/// Перевод времени в минуты
+/// </summary>
+void Time::TranslateToMinutes() {
+    cout << double((Hours * 60.0) + Minutes + ((Seconds / 60.0) / 60.0)) << endl;
+}
+/// <summary>
+/// Перевод времени в секунды
+/// </summary>
+void Time::TranslateToSeconds() {
+    cout << double(((Hours * 60.0) * 60.0) + (Minutes * 60.0) + Seconds) << endl;
 }
 /// <summary>
 /// Вывод значений класса
