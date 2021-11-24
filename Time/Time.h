@@ -30,9 +30,6 @@ public:
     int GetSeconds();
     int GetMinutes();
     int GetHours();
-    void TranslateToHours();
-    void TranslateToMinutes();
-    void TranslateToSeconds();
     void ShowTime();
     int carryover();
 };
