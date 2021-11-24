@@ -4,9 +4,9 @@
 
 int main()
 {
-    setlocale(LC_ALL, "Russian");
+     setlocale(LC_ALL, "Russian");
     Time time(12, 32, 45);
-    cout << "Âðåìÿ: ";
+    cout << "Ð’Ñ€ÐµÐ¼Ñ: ";
     time.ShowTime();
     cout << "--: ";
     time--;
@@ -14,20 +14,20 @@ int main()
     cout << "++: ";
     time++;
     time.ShowTime();
-    cout << "Âðåìÿ - 12 ñåêóíä: ";
+    cout << "Ð’Ñ€ÐµÐ¼Ñ - 12 ÑÐµÐºÑƒÐ½Ð´: ";
     time - 12;
     time.ShowTime();
-    cout << "Âðåìÿ + 400 ñåêóíä: ";
+    cout << "Ð’Ñ€ÐµÐ¼Ñ + 400 ÑÐµÐºÑƒÐ½Ð´: ";
     time + 400;
     time.ShowTime();
-    cout << "Âðåìÿ += 50 ñåêóíä: ";
+    cout << "Ð’Ñ€ÐµÐ¼Ñ += 50 ÑÐµÐºÑƒÐ½Ð´: ";
     time += 50;
     time.ShowTime();
-    cout << "Ïåðåâîä âðåìåíè â ÷àñû: ";
+    cout << "ÐŸÐµÑ€ÐµÐ²Ð¾Ð´ Ð²Ñ€ÐµÐ¼ÐµÐ½Ð¸ Ð² Ñ‡Ð°ÑÑ‹: ";
     time.TranslateToHours();
-    cout << "Ïåðåâîä âðåìåíè â ìèíóòû: ";
+    cout << "ÐŸÐµÑ€ÐµÐ²Ð¾Ð´ Ð²Ñ€ÐµÐ¼ÐµÐ½Ð¸ Ð² Ð¼Ð¸Ð½ÑƒÑ‚Ñ‹: ";
     time.TranslateToMinutes();
-    cout << "Ïåðåâîä âðåìåíè â ñåêóíäû: ";
+    cout << "ÐŸÐµÑ€ÐµÐ²Ð¾Ð´ Ð²Ñ€ÐµÐ¼ÐµÐ½Ð¸ Ð² ÑÐµÐºÑƒÐ½Ð´Ñ‹: ";
     time.TranslateToSeconds();
 }
 
